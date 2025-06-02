@@ -2,17 +2,17 @@ import React from 'react'
 import Display from './Display'
 import KeyPad from './KeyPad'
 import useCalculator from '../hooks/useCalculator'
-const Calculator = () => {const calculator = useCalculator()
+const Calculator = () => {
+  const c = useCalculator()
+  const handleClick = l => l >= '0' && l <= '9' ? c.inputNumber(l) : 
+    l === '.' ? c.inputDecimal() : l === 'C' ? c.clear() : l === '=' ? c.performOperation('=') : 
+    l === '%' ? c.performOperation('%') : l === '+/-' ? c.toggleNegative() : 
+    c.performOperation(l === '×' ? '*' : l === '÷' ? '/' : l)
+
   return (
     <div className="calculator">
-      <Display value={calculator.display} />
-      <KeyPad onButtonClick={(label) => {
-        if (label >= '0' && label <= '9') {calculator.inputNumber(label)} else if (label === '.') {calculator.inputDecimal()} else if (label === 'C') {calculator.clear()} else if (label === '=') {calculator.performOperation('=')} else if (label === '%') {calculator.percentage()} else if (label === '+/-') {calculator.toggleNegative()
-        } else {
-          const op = label === '×' ? '*' : label === '÷' ? '/' : label
-          calculator.performOperation(op)
-        }
-      }} />
+      <Display value={c.display} />
+      <KeyPad onButtonClick={handleClick} />
     </div>
   )
 }

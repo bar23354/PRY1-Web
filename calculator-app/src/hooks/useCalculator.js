@@ -88,12 +88,6 @@ const useCalculator = () => {
     }
   }
 
-  const percentage = () => {
-    const value = parseFloat(display)
-    const newValue = value / 100
-    setDisplay(String(newValue))
-  }
-
   const toggleNegative = () => {
     if (display === '0') return
     if (display.indexOf('-') === 0) {
@@ -110,7 +104,6 @@ const useCalculator = () => {
     inputDecimal,
     clear,
     performOperation,
-    percentage,
     toggleNegative
   }
 }

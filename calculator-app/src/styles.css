@@ -73,6 +73,7 @@ body {
   box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.2);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .display::after {
@@ -82,8 +83,10 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.4), transparent);
-  animation: flicker 3s infinite;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.05), transparent);
+  animation: flicker 6s infinite;
+  z-index: 0;
+  pointer-events: none;
 }
 
 @keyframes flicker {

@@ -7,6 +7,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:all": "react-scripts test --watchAll=false",
+    "test:watch": "react-scripts test --watchAll",
     "lint": "eslint \"./**/*.{js,jsx}\" --ignore-pattern \"node_modules/\" --ignore-pattern \"build/\"",
     "lint:fix": "eslint \"./**/*.{js,jsx}\" --ignore-pattern \"node_modules/\" --ignore-pattern \"build/\" --fix",
     "update": "npx npm-check-updates -u && npm install",

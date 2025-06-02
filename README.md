@@ -4,7 +4,7 @@
 
 1. Clona el repositorio:
    ```
-   git clone <url-del-repositorio>
+   git clone https://github.com/bar23354/PRY1-Web.git
    cd calculator-app
    ```
 
@@ -24,6 +24,7 @@ Para ejecutar las pruebas, utiliza el siguiente comando:
 ```
 npm test
 ```
+Y luego coloque "a" para ejecutar todos los tests
 
 ## Análisis de Código (Linting)
 

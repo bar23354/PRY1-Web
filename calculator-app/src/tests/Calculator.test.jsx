@@ -68,6 +68,16 @@ describe('Calculator Component', () => {
     expect(displayDiv.textContent).toBe('2')
   })
 
+  test('performs modulo correctly', () => {
+    const { container, getByText } = render(<Calculator />)
+    fireEvent.click(getByText('7'))
+    fireEvent.click(getByText('%'))
+    fireEvent.click(getByText('3'))
+    fireEvent.click(getByText('='))
+    const displayDiv = container.querySelector('.display')
+    expect(displayDiv.textContent).toBe('1')
+  })
+
   test('handles +/- operation correctly', () => {
     const { container, getByText } = render(<Calculator />)
     fireEvent.click(getByText('5'))
